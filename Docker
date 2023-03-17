@@ -5,7 +5,7 @@ FROM node:14-alpine
 # Install Dependencies
 COPY package*.json ./
 
-RUN npm install --silent
+RUN npm install --production
 
 # Copy app source code
 COPY . .
