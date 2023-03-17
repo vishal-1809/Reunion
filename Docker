@@ -1,0 +1,22 @@
+FROM node:14-alpine
+
+
+
+# Install Dependencies
+COPY package*.json ./
+
+RUN npm install --silent
+
+# Copy app source code
+COPY . .
+
+# Exports
+EXPOSE 5000
+
+CMD ["npm","start"]
+
+
+docker build -t image .
+
+docker run -p 5000:5000 image
+
